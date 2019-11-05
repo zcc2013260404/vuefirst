@@ -1,0 +1,32 @@
+
+body,ul,ol,dl,dd,p,h1,h2,h3,h4,h5,h6,input,textarea,hr,div,em,strong{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: "΢���ź�";
+}
+ul,ol{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+html{
+	font-size: 26.666vw;
+}
+body{
+	width: 3.75rem;
+	font-size: .12rem;
+	font-family: Arial,Helvetica,STHeiTi,sans-serif;
+}
+/*after{content:"";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}*/
+
+/*��������ʽ   
+   tableѡ����:{   border-spacing: 0px;  border-collapse: collapse;} 
+   �ƶ����ѡ���� th,�ƶ����ѡ���� td{border:1px solid ��ɫ }	
+*/
+
