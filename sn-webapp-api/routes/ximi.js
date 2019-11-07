@@ -1,6 +1,9 @@
 const express = require("express")
 const router = express.Router()
-const shopsModel = require("../data/carmodel")
+const shopsModel = require("../data/home1model")
+const classfyModel=require("../data/classifymodel")
+const classfy=require("../data/classify")
+
 //允许跨域设置
 
 router.all("*",(req,res,next)=>{
@@ -15,5 +18,13 @@ router.all("*",(req,res,next)=>{
 router.get("/",(req,res)=>{
 	res.json(shopsModel.getdata())
 	//{orders:orderarr}  绑定到order.ejs模板上
+})
+router.get("/classify",(req,res)=>{
+    res.json(classfyModel.getdata())
+    //{orders:orderarr}  绑定到order.ejs模板上
+})
+router.get("/class",(req,res)=>{
+    res.json(classfy.getdata())
+    //{orders:orderarr}  绑定到order.ejs模板上
 })
 module.exports = router;

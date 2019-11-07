@@ -1,27 +1,43 @@
 <template>
     <div class="homepro-content">
-        <img src="../../../public/assets/updaa/h5.jpg">
-        <div class="des">Redmi Note 8 Pro</div>
-        <div class="title">6400万全场景四摄</div>
-        <div class="price"><i>￥1299</i><span>￥1399</span></div>
-        <div class="buy"> <div>立即购买</div></div>
+        <div class="homepro-content-pro" :key="i" v-for="(n,i) in product">
+            <img :src="n.pic" class="im1">
+            <img :src="n.sr" class="im2">
+            <div class="des">{{n.title}}</div>
+            <div class="title">{{n.des}}</div>
+            <div class="price"><i>{{n.price}}</i><span>{{n.beforeprice}}</span></div>
+            <div class="buy"> <div>立即购买</div></div>
+        </div>
 
     </div>
 </template>
 
 <script>
     export default {
-        name: "homepro"
+        name: "homepro",
+        props:["product"]
     }
 </script>
 
 <style scoped>
     .homepro-content{
-      width: 1.85rem;
-        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-    .homepro-content img{
+    .homepro-content-pro{
+      width: 1.84rem;
+        text-align: center;
+        position: relative;
+    }
+    .im1{
         width: 1.85rem;
+    }
+    .im2{
+        width: .52rem;
+        position: absolute;
+        left: 1.3rem;
+        top:.95rem
     }
     .des{
         font-size: .145rem;

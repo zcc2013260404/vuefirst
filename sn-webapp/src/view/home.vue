@@ -1,42 +1,21 @@
 <template>
     <div class="home-content">
         <div class="home-content-header">
-            <span class="icon iconfont icon-index"></span>
+            <span class="logo-left"><img src="../assets/ima/m8.png"></span>
             <div><i class="icon iconfont icon-index"></i><input type="text" value="搜索商品名称"></div>
-            <span class="icon iconfont icon-index"></span>
+            <span class="logo-right"><img src="../assets/ima/m9.png"></span>
         </div>
-        <transition mode="out-in">
-            <div :is="flag"  @ab="flag='xm-allnav'" @cd="flag='xm-nav'" style="position: absolute;top: .44rem;z-index: 2">
-            </div>
-        </transition>
-<!--        轮播图-->
-        <xm-swiper style="position:absolute;top:.75rem" :pic="data.src" v-if="data.src"></xm-swiper>
-<!--        主导航-->
-        <div class="home-main-banner">
-            <a href="#"><img src="../assets/ima/m3.png"> </a>
-            <a href="#"><img src="../assets/ima/m3.webp"> </a>
-            <a href="#"><img src="../assets/ima/m4.gif"> </a>
-            <a href="#"><img src="../assets/ima/m5.webp"> </a>
-            <a href="#"><img src="../assets/ima/m6.webp"> </a>
-            <a href="#"><img src="../assets/ima/m3.png"> </a>
-            <a href="#"><img src="../assets/ima/m3.png"> </a>
-            <a href="#"><img src="../assets/ima/m3.png"> </a>
-            <a href="#"><img src="../assets/ima/m3.png"> </a>
-            <a href="#"><img src="../assets/ima/m3.png"> </a>
-        </div>
-        <div class="home-pro1">
-            <div class="home-pro1-l"> <img :src="data.s1" > </div>
-            <div class="home-pro1-r">
-                <img :src="data.s2" >
-                <img :src="data.s3" >
-            </div>
-        </div>
-        <div class="home-pro2">
-            <img :src="data.s4" >
-        </div>
-        <div clsaa="home-proall">
-         <xm-homepro></xm-homepro>
-        </div>
+        <keep-alive>
+            <transition mode="out-in">
+                <div :is="flag"  @ab="flag='xm-home-allnav'" @cd="flag='xm-home-nav'" @f1="f1r" @fall1="f1allr"  style="position: absolute;top: .44rem;z-index: 2">
+                </div>
+            </transition>
+        </keep-alive>
+        <home-first v-if="com==0" :data="data"></home-first>
+        <home-second v-if="com==1"></home-second>
+        <home-three v-else-if="com==2"></home-three>
+        <home-four v-else-if="com==3"></home-four>
+        <home-five v-else-if="com==4"></home-five>
     </div>
 </template>
 
@@ -44,8 +23,11 @@
     import cartApi from "../apis/cartApi"
     import nav from "../components/home/nav";
     import allnav from "../components/home/allnav";
-    import swiper from "../components/home/swiper";
-    import homepro from "../components/home/homepro";
+    import first from "../components/home/first/first";
+    import second from "../components/home/second";
+    import three from "../components/home/three";
+    import four from "../components/home/four";
+    import five from "../components/home/five";
     export default {
         name: "home",
         methods: {
@@ -56,6 +38,14 @@
                 let data = await cartApi.getHomeData()
                 console.log(data)
                 this.data=data
+            },
+            f1r(i){
+                // console.log(i)
+                this.com=i
+            },
+            f1allr(i){
+                this.com=i
+                this.flag ='xm-home-nav'
             }
         },
         beforeMount () {
@@ -63,15 +53,19 @@
         },
         data(){
             return{
-                flag:"xm-nav",
-                data:[]
+                flag:"xm-home-nav",
+                com:0,
+                data:[],
             }
         },
         components:{
-            'xm-nav':nav,
-            'xm-allnav':allnav,
-            'xm-swiper':swiper,
-            'xm-homepro':homepro
+            'xm-home-nav':nav,
+            'xm-home-allnav':allnav,
+            'home-first':first,
+            'home-second':second,
+            'home-three':three,
+            'home-four':four,
+            'home-five':five
         }
     }
 </script>
@@ -79,7 +73,8 @@
 <style scoped>
     .home-content{
        position: relative;
-        height: 16rem;
+        height: 28rem;
+        overflow: hidden;
   }
     .home-content-header{
         display: flex;
@@ -87,10 +82,21 @@
         line-height: .5rem;
         text-align: center;
         background-color: #F2F2F2;
+        width: 3.75rem;
+        position: fixed;
+        z-index:999;
     }
     .home-content-header span{
         width: .52rem;
         font-size: .26rem;
+    }
+    .logo-left img{
+        width: .25rem;
+        height: .16rem;
+    }
+    .logo-right img{
+        width: .2rem;
+        height: .2rem;
     }
     .home-content-header div{
         width: 2.7rem;
@@ -113,44 +119,5 @@
         color: #A5A5A5;
         margin-top: .08rem;
         border: none;
-    }
-    .home-main-banner{
-        display: flex;
-        margin-top: 2.17rem;
-        flex-wrap: wrap;
-    }
-    .home-main-banner img{
-        width: .75rem;
-        height: .795rem;
-        display: block;
-    }
-    .home-pro1{
-     display: flex;
-        justify-content: space-between;
-    }
-    .home-pro1-l{
-        width:1.86rem ;
-        height: 2.64rem;
-        background-color: white;
-    }
-    .home-pro1-l img{
-        width:1.86rem ;
-        height: 2.64rem;
-    }
-    .home-pro1-r{
-        width:1.85rem ;
-        height: 1.32rem;
-    }
-    .home-pro1-r img{
-        width:1.85rem ;
-        height: 1.32rem;
-        display: block;
-    }
-    .home-pro1-r img:first-child{
-        margin-bottom: .03rem;
-    }
-    .home-pro2 img{
-        width:3.75rem ;
-        height:2.30rem ;
     }
 </style>

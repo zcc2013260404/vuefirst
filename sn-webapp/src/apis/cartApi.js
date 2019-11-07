@@ -11,8 +11,19 @@ export default {
   },
    // home数据获取
   async getHomeData () {
-    let res = await fetch('http://localhost:3000/cart')
+    let res = await fetch('http://localhost:3000/xiaomi')
     let data = await res.json()
     return data
-  }
+  },
+  //classify数据获取
+  async getClassifyData () {
+    let res = await fetch('http://localhost:3000/xiaomi/classify')
+    let data = await res.json()
+    return data
+  },
+  async getClassData () {
+    let res = await fetch('http://localhost:3000/xiaomi/class')
+    let data = await res.json()
+    return data
+  },
 }

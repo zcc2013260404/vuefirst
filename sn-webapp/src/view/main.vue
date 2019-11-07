@@ -19,5 +19,6 @@
 <style scoped>
     .main-content{
         /*background-color:#F5F5F5 ;*/
+        overflow: hidden;
     }
 </style>

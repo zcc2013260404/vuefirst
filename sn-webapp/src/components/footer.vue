@@ -24,6 +24,7 @@
         justify-content: space-around;
         text-align: center;
         color: #9E9E9E;
+        background-color: white;
     }
     .footer span{
         display: block;
