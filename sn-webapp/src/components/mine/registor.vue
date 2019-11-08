@@ -5,10 +5,15 @@
         </div>
         <div class="res-phone">
             <div v-if="flag">+86<span class="icon iconfont icon-index"></span></div>
-            <div><input type="text" :placeholder="flag?'手机号码':'邮箱/手机号码/小米ID'" ></div>
+            <div v-if="flag"><input type="text" placeholder="手机号码" ></div>
+            <div v-else><input type="text" placeholder="邮箱/手机号码/小米ID" ></div>
+<!--            <div><input type="text" :placeholder="flag?'手机号码':'邮箱/手机号码/小米ID'" ></div>-->
         </div>
         <div class="res-number">
-            <div><input type="text" :placeholder="flag?'短信验证码':'密码'"></div>
+
+            <div v-if="flag"><input type="text" placeholder="短信验证码" ></div>
+            <div v-else><input type="text" placeholder="密码" ></div>
+<!--            <div><input type="text" :placeholder="flag?'短信验证码':'密码'"></div>-->
             <div>获取验证码</div>
         </div>
         <div class="submit" @click="changems1">

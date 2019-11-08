@@ -26,4 +26,9 @@ export default {
     let data = await res.json()
     return data
   },
+  async getCarData () {
+    let res = await fetch('http://localhost:3000/xiaomi/cart')
+    let data = await res.json()
+    return data
+  },
 }

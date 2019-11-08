@@ -5,6 +5,7 @@ import main from "../view/main";
 import mine from "../view/mine";
 import cart from "../view/cart";
 import registor from "../components/mine/registor";
+import detail from "../components/cart/detail";
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
@@ -37,6 +38,10 @@ let router = new VueRouter({
         {
           path: 'regist',
           component: registor
+        },
+        {
+          path: 'detail/:id',
+          component: detail
         },
       ]
     }

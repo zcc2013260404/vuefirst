@@ -3,7 +3,7 @@
         <xm-cheader title="分类" ref="o"></xm-cheader>
         <div class="classify-content-bpttom">
             <xm-classify-nav @r1="updata"></xm-classify-nav>
-            <xm-classify-pro :key="i" v-for="(n,i) in data" :data="n" ref="" ></xm-classify-pro>
+            <xm-classify-pro :data="data.m1" v-if="data.m1" :n="index"></xm-classify-pro>
         </div>
     </div>
 </template>
@@ -41,12 +41,21 @@
             updata(i){
                 console.log(i)
                 this.index=i
-                console.log(this.$refs.o)
+                console.log(this.$refs.i)
             }
         },
         beforeMount () {
             this. _initClassifyData()
         },
+        // mounted() {
+        //     let o = document.querySelectorAll(".pro-shop")[0]
+        //     let o1 = document.querySelectorAll(".pro-shop")[1]
+        //     let o2 = document.querySelectorAll(".pro-shop")[2]
+        //     console.log(o)
+        //     console.log(o1)
+        //     console.log(o2)
+        // }
+
 
 
 

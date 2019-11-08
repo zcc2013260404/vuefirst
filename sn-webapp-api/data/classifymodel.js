@@ -1,7 +1,8 @@
 module.exports={
 	getdata(){
 		let a={
-			"s1":"assets/updaa/c1.jpg",
+			"s1":"assets/updaa/s1.jpg",
+			"s2":"assets/updaa/s1.jpg",
 			"product":[
 				{
 					"title":"小米CC9 Pro",

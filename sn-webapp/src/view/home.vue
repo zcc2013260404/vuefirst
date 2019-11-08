@@ -3,7 +3,7 @@
         <div class="home-content-header">
             <span class="logo-left"><img src="../assets/ima/m8.png"></span>
             <div><i class="icon iconfont icon-index"></i><input type="text" value="搜索商品名称"></div>
-            <span class="logo-right"><img src="../assets/ima/m9.png"></span>
+            <a href="#/main/mine" class="logo-right"><img src="../assets/ima/m9.png"></a>
         </div>
         <keep-alive>
             <transition mode="out-in">
@@ -12,7 +12,7 @@
             </transition>
         </keep-alive>
         <home-first v-if="com==0" :data="data"></home-first>
-        <home-second v-if="com==1"></home-second>
+        <home-second v-if="com==1" :data="data.phone"></home-second>
         <home-three v-else-if="com==2"></home-three>
         <home-four v-else-if="com==3"></home-four>
         <home-five v-else-if="com==4"></home-five>
@@ -24,7 +24,7 @@
     import nav from "../components/home/nav";
     import allnav from "../components/home/allnav";
     import first from "../components/home/first/first";
-    import second from "../components/home/second";
+    import second from "../components/home/sccond/second";
     import three from "../components/home/three";
     import four from "../components/home/four";
     import five from "../components/home/five";
@@ -87,6 +87,10 @@
         z-index:999;
     }
     .home-content-header span{
+        width: .52rem;
+        font-size: .26rem;
+    }
+    .home-content-header a{
         width: .52rem;
         font-size: .26rem;
     }

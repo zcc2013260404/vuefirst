@@ -18,7 +18,7 @@
     .footer{
         position: fixed;
         bottom: 0;
-        width: 100%;
+        width: 3.75rem;
         height:.52rem;
         display: flex;
         justify-content: space-around;

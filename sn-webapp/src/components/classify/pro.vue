@@ -1,5 +1,6 @@
 <template>
     <div class="pro-content">
+        {{n}}
         <div class="pro-shop" :key="i" v-for="(n,i) in data">
             <div class="pro-header"><img :src="n.pic"></div>
             <div>
@@ -17,7 +18,23 @@
         components:{
             'xm-classify-item1':items1,
         },
-        props:["data"]
+        props:["data","n"],
+        methods:{
+
+        },
+        mounted() {
+            let o = document.querySelectorAll(".pro-shop")[0]
+            let o1 = document.querySelectorAll(".pro-shop")[1]
+            let o2 = document.querySelectorAll(".pro-shop")[2]
+            let p=document.getElementsByClassName("pro-shop")
+
+            console.log(o.offsetTop)
+            console.log(o1.offsetTop)
+            console.log(o)
+            console.log(o1)
+            console.log(o2)
+            console.log(p)
+        }
     }
 </script>
 
