@@ -6,23 +6,37 @@ module.exports={
 			"product":[
 				{
 					"title":"小米CC9 Pro",
-					"pic":"assets/updaa/h5.jpg",
+					"pic":"assets/updaa/sj1.jpg",
 				},
 				{
 					"title":"Redmi 8",
-					"pic":"assets/updaa/h5.jpg",
+					"pic":"assets/updaa/sj2.jpg",
 				},
 				{
 					"title":"Redmi 8",
-					"pic":"assets/updaa/h5.jpg",
+					"pic":"assets/updaa/sj3.jpg",
 				},
 				{
 					"title":"Redmi 8",
-					"pic":"assets/updaa/h5.jpg",
+					"pic":"assets/updaa/sj4.jpg",
 				},
 				{
 					"title":"Redmi 8",
-					"pic":"assets/updaa/h5.jpg",
+					"pic":"assets/updaa/sj5.jpg",
+				},
+				{
+					"title":"Redmi 8",
+					"pic":"assets/updaa/sj6.jpg",
+				},{
+					"title":"Redmi 8",
+					"pic":"assets/updaa/sj7.jpg",
+				},{
+					"title":"Redmi 8",
+					"pic":"assets/updaa/sj8.jpg",
+				},
+				{
+					"title":"Redmi 8",
+					"pic":"assets/updaa/sj9.jpg",
 				}
 			],
 			"products":[

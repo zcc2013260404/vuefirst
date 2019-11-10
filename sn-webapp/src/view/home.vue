@@ -13,7 +13,7 @@
         </keep-alive>
         <home-first v-if="com==0" :data="data"></home-first>
         <home-second v-if="com==1" :data="data.phone"></home-second>
-        <home-three v-else-if="com==2"></home-three>
+        <home-three v-else-if="com==2" :data="data.rooboot"></home-three>
         <home-four v-else-if="com==3"></home-four>
         <home-five v-else-if="com==4"></home-five>
     </div>
@@ -25,7 +25,7 @@
     import allnav from "../components/home/allnav";
     import first from "../components/home/first/first";
     import second from "../components/home/sccond/second";
-    import three from "../components/home/three";
+    import three from "../components/home/three/three";
     import four from "../components/home/four";
     import five from "../components/home/five";
     export default {
@@ -73,7 +73,6 @@
 <style scoped>
     .home-content{
        position: relative;
-        height: 28rem;
         overflow: hidden;
   }
     .home-content-header{

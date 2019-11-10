@@ -1,6 +1,6 @@
 <template>
     <div class="detail-content">
-        <div class="im1"><img src="../../assets/ima/m1.png"></div>
+        <div class="im1"><img :src="detaildata.pZQImg"></div>
         <div class="buynow">
             <div class="s1">预约中</div>
             <div class="s2"><span >距预约结束2天</span><span>06:44:25</span></div>
@@ -11,7 +11,7 @@
         <div class="buyit">
             <a><img src="../../assets/ima/ca1.png"><span>首页</span></a>
             <a><img src="../../assets/ima/ca2.png"><span>购物车</span></a>
-            <a href="#/main/cart"  class="appoint" >立即预定</a>
+            <a href="#/main/cart"  class="appoint" @click="cpp">立即预定</a>
         </div>
     </div>
 </template>
@@ -23,15 +23,18 @@
         data() {
             return {
                 data: [],
-                detaildata:[]
+                detaildata:[],
+                id:""
             }
         },
+
         methods: {
             async _initCarifyData() {
                 let data = await cartApi.getCarData();
                 console.log(data);
                 this.data = data
                 let a = this.$route.params.id;
+                this.id=a;
                 console.log(a)
                 if (this.data.shops) {
                     this.data.shops.forEach((shop) => {
@@ -39,12 +42,15 @@
                             if (product.pId == a) {
                                 this.detaildata = product;
                                 console.log(this.detaildata)
-                                this.$cart.$emit("ca", this.detaildata)
                             }
                         })
                     })
                 }
             },
+            cpp(){
+                this.$cart.$emit("ca", this.detaildata.pId)
+                this.$store.dispatch('INITCART',this.id)
+            }
             // updata() {
             //     let a = this.$route.params.id;
             //     console.log(a)

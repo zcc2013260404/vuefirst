@@ -9,73 +9,182 @@
             <span>购物车还是空的</span>
             <em>去逛逛</em>
         </div>
+        <div class="newadd-list">
+            <a class="newadd-item" v-for="(partdata,i) in list " :key="i">
+                <div  :class="redbac"><input type="checkbox" v-model="flag" @change="clickme" :class="redbac"></div>
+                <div class="newadd-img">
+                    <img :src="partdata.pZQImg">
+                </div >
+                <div class="newadd-bottom">
+                    <p>{{partdata.pName}}</p>
+                    <div class="newadd-price">售价：<span>{{partdata.pPrice}}</span></div>
+                    <div class="newadd-change">
+                        <div class="num"><span class="min">—</span> <span>1</span> <span class="add">+</span></div>
+                        <span class="newadd-del"><img src="../assets/ima/ca3.png"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
         <div class="youlike">
             <img src="../assets/ima/m7.jpg">
         </div>
         <div class="goodlist" v-if="data.shops">
             <a :href="'#/main/detail/'+u.pId" class="good-item" :key="i" v-for="(u,i) in data.shops[0].products" >
-               <img src="../assets/ima/m7.jpg">
+               <img :src="u.pZQImg">
                 <div class="good-tip">
                     <p>{{u.pName}}</p>
                     <span>￥{{u.pPrice}}</span>
                 </div>
             </a>
         </div>
-        <a href="#/main/detail/1">点我跳转{{buydata}}</a>
-        <a href="#/main/detail/2">点我跳转</a>
-        <div>{{buydata}}</div>
+<!--        <a href="#/main/detail/1">点我跳转{{buydata}}</a>-->
+<!--        <a href="#/main/detail/2">点我跳转</a>-->
+<!--        <div>{{partdata}}</div>-->
+<!--        <div>{{cartInfo}}</div>-->
+        <div>{{list}}</div>
     </div>
 </template>
 
 <script>
     import cheader from "../components/cheader";
     import cartApi from "../apis/cartApi";
+    import { mapGetters } from 'vuex'
     export default {
         name: "cart",
         components:{
             'xm-cheader':cheader
         },
+        computed: {
+            ...mapGetters({
+                cartInfo: 'GETCART'
+            })
+        },
         data(){
             return{
+              redbac:"check",
+              flag:true,
               data:[],
-              buydata:''
+              buydata:"",
+              partdata:"",
+              list:[]
             }
         },
         methods:{
+            clickme(){
+                if(this.flag){
+                    this.redbac="check"
+                }
+                else {
+                    this.redbac="white"
+                }
+            },
             async _initCartyData() {
                 let data = await cartApi.getCarData();
                 console.log(data);
                 this.data=data;
-                // this.$cart.$on("ca",(a)=>{
-                //     this.buydata=a
-                //     console.log( this.buydata)
+                // this.data.shops.forEach((shop)=>{
+                //     shop.products.forEach((product)=>{
+                //         if(product.pId==this.cartInfo){
+                //             this.partdata = product;
+                //             this.list.push(product)
+                //
+                //         }
+                //     })
                 // })
+                for(let i=0;i<this.cartInfo.length;i++){
+                    this.data.shops.forEach((shop)=>{
+                        shop.products.forEach((product)=>{
+                            if(product.pId==this.cartInfo[i]){
+                                // this.partdata = product;
+                                this.list.push(product)
+                            }
+                        })
+                    })
+                }
             },
             updatadata(a){
                 this.buydata=a
                 console.log(this.buydata)
-                console.log(233)
-                // this.data.shops.forEach((shop)=>{
-                //     shop.products.forEach((product)=>{
-                //         // if(product==)
-                //     })
-                // })
+                // alert(this.buydata)
             }
         },
-        async beforeMount() {
-            await  this._initCartyData()
-            this.$cart.$on("ca",this.updatadata)
+         beforeMount() {
+             this._initCartyData()
+             this.$cart.$on("ca",this.updatadata)
+
         },
-        // beforeMount(){
-        //     this.$cart.$on("ca",this.updatadata)
-        // },
 
     }
 </script>
 
 <style scoped>
+    .white{
+        padding: 0rem .15rem;
+        line-height: 1rem;
+        background:url("../assets/ima/ca5.png") no-repeat 50% 50%;
+        background-size: .2rem .2rem;
+    }
+  .newadd-item{
+      width: .2rem;
+      display: flex;
+      margin: .13rem 0;
+  }
+  .check {
+      padding: 0rem .15rem;
+      line-height: 1rem;
+      background:url("../assets/ima/ca4.png") no-repeat 50% 50%;
+      background-size: .2rem .2rem;
+  }
+  .check input{
+     opacity: 0;
+  }
+  .white input{
+      opacity: 0;
+  }
+  .newadd-img img{
+      width: .91rem;
+      height: .92rem;
+  }
+  .newadd-bottom{
+      width: 2.3rem;
+      margin-left: .2rem;
+  }
+  .newadd-bottom p{
+      width: 1.6rem;
+      font-size: .155rem;
+  }
+  .newadd-price{
+      color: #999999;
+  }
+  .num{
+      display: flex;
+      text-align: center;
+      line-height: .3rem;
+      border: .01rem solid #EEEEEE;
+      font-size: .16rem;
+  }
+   .add,.min{
+     background-color: #FAFAFA;
+  }
+  .num span{
+      display: inline-block;
+      width: .3rem;
+  }
+  .newadd-change {
+     display: flex;
+      width: .32rem;
+      height: .32rem;
+  }
+  .newadd-del{
+      margin-left: .75rem;
+  }
+  .newadd-del img{
+     width: .3rem;
+      height: .3rem;
+  }
  .cart-content {
    height: 16rem;
+   margin-bottom: 5rem;
  }
 .cart-center{
  display: flex;
@@ -141,8 +250,9 @@ font-size: .17rem;
      flex-wrap: wrap;
  }
  .good-item{
-     width: 1.85rem;
+     width: 1.86rem;
      font-size: .145rem;
+     color: #3C3C3C;
  }
 .good-item img{
     width: 1.85rem;

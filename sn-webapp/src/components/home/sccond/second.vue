@@ -12,16 +12,27 @@
             </div>
             <div class="second-im3"><img :src="data.s6.s3"></div>
         </div>
+        <div class="goodshop">
+            <div class="goodlist-item" v-for="(n,i) in data.s7" :key="i">
+                <second-sebigro :data="n"></second-sebigro>
+                <second-sesmallro :data="n.product" class="good-bottom"></second-sesmallro>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import sale from "./sale";
+    import sebigpro from "./sebigpro";
+    import sesmallpro from "./sesmallpro";
     export default {
         name: "second",
         props:["data"],
         components:{
-            "second-sale":sale
+            "second-sale":sale,
+            "second-sebigro":sebigpro,
+            "second-sesmallro":sesmallpro,
+
         }
     }
 </script>
@@ -31,10 +42,10 @@
     margin-top: .74rem;
     width: 100%;
 }
- .second-im1 img{
-     height: 3.86rem;
-     display: block;
- }
+.second-im1 img{
+    height: 3.86rem;
+    display: block;
+}
 .second-im2 img{
     width: 3.75rem;
     height: .48rem;
@@ -53,4 +64,16 @@
     width: 1.25rem;
     height: 1.4rem;
 }
+.goodshop{
+    background-color:#471793 ;
+    padding: 0rem .06rem;
+}
+.good-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 3.58rem;
+    margin: 0 auto;
+}
+
 </style>

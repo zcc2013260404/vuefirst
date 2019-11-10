@@ -19,9 +19,9 @@ module.exports = {
             "pId": "0000",
             "pImg":["img/imgShops/15_05732170703268005_360.jpg","img/imgShops/15_05269897971967809_360.jpg",
             "img/imgShops/15_05269900313406069_360.jpg","img/imgShops/15_05269900361435399_360.jpg","img/imgShops/15_05269900401043317_360.jpg"],
-            "pZQImg":"assets/updaa/s4.jpg",
-            "pName":"特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜",
-            "pPrice":33.90,
+            "pZQImg":"assets/updaa/car1.jpg",
+            "pName":"小米CC9 Pro 8GB+128GB",
+            "pPrice":3099,
             "pAllNum":50,  // 库存
             "pOutNum":0,   // 销量
             "pCartNum":0,  // 购物车数量
@@ -32,9 +32,9 @@ module.exports = {
             "pId": "0001",
             "pImg":["img/imgShops/15_06149577383901171_360.jpg","img/imgShops/15_05836061572843922_360.jpg",
             "img/imgShops/15_06149577027595173_360.jpg","img/imgShops/15_05836061144036352_360.jpg"],
-            "pZQImg":"assets/updaa/s4.jpg",
-            "pName":"【农谷鲜】稻花香 冷泉米 5kg/包",
-            "pPrice":38.90,
+            "pZQImg":"assets/updaa/car2.jpg",
+            "pName":"Redmi K20 Pro 尊享版 12GB+512GB",
+            "pPrice":3199,
             "pAllNum":50,  // 库存
             "pOutNum":0,   // 销量
             "pCartNum":0,  // 购物车数量
@@ -45,9 +45,9 @@ module.exports = {
             "pId": "0002",
             "pImg":["img/imgShops/15_05430791653540377_360.png","img/imgShops/15_05506786328157724_360.jpg",
             "img/imgShops/15_05506786390316426_360.jpg","img/imgShops/15_05506786446466044_360.jpg"],
-            "pZQImg":"assets/updaa/s4.jpg",
-            "pName":"【农谷鲜】长粒香米 米中珍萃 真空10斤装",
-            "pPrice":46.90,
+            "pZQImg":"assets/updaa/car3.jpg",
+            "pName":"小米9 Pro 5G 12GB+512GB",
+            "pPrice":4299,
             "pAllNum":50,  // 库存
             "pOutNum":0,   // 销量
             "pCartNum":0,  // 购物车数量
@@ -58,9 +58,9 @@ module.exports = {
             "pId": "0003",
             "pImg":["img/imgShops/15_05499883924341679_360.jpg","img/imgShops/15_05499884192859442_360.jpg",
             "img/imgShops/15_05499884145957206_360.jpg","img/imgShops/15_05499884234677416_360.jpg","img/imgShops/15_05499884269689902_360.jpg"],
-            "pZQImg":"assets/updaa/s4.jpg",
-            "pName":"【农谷鲜】农家自产稻花香米 5kg",
-            "pPrice":35.90,
+            "pZQImg":"assets/updaa/car4.jpg",
+            "pName":"小米CC9 6GB+128GB",
+            "pPrice":1699,
             "pAllNum":50,  // 库存
             "pOutNum":0,   // 销量
             "pCartNum":0,  // 购物车数量
@@ -71,9 +71,9 @@ module.exports = {
             "pId": "0004",
             "pImg":["img/imgShops/15_06058026489050633_360.jpg","img/imgShops/15_05987021223657961_360.jpg",
             "img/imgShops/15_05987025781257746_360.jpg","img/imgShops/15_05987025809975141_360.jpg","img/imgShops/15_05987025849906840_360.jpg"],
-            "pZQImg":"assets/updaa/s4.jpg",
-            "pName":"【农谷鲜】花日尝相思香米2.5kg",
-            "pPrice":25.90,
+            "pZQImg":"assets/updaa/car5.jpg",
+            "pName":"小米CC9e 6GB+64GB",
+            "pPrice":1099,
             "pAllNum":50,  // 库存
             "pOutNum":0,   // 销量
             "pCartNum":0,  // 购物车数量
@@ -83,15 +83,82 @@ module.exports = {
          {
             "pId": "0005",
             "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
-            "pZQImg":"assets/updaa/s4.jpg",
-            "pName":"果然 农谷鲜稻香米5kg",
-            "pPrice":39.90,
+            "pZQImg":"assets/updaa/car6.jpg",
+            "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+            "pPrice":1899,
             "pAllNum":50,  // 库存
             "pOutNum":0,   // 销量
             "pCartNum":0,  // 购物车数量
             "pLikeChecked":false,     // 是否收藏
             "checked":false       // 是否选中
-         },
+         }, {
+                 "pId": "0006",
+                 "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
+                 "pZQImg":"assets/updaa/car7.jpg",
+                 "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+                 "pPrice":1899,
+                 "pAllNum":50,  // 库存
+                 "pOutNum":0,   // 销量
+                 "pCartNum":0,  // 购物车数量
+                 "pLikeChecked":false,     // 是否收藏
+                 "checked":false       // 是否选中
+             }, {
+                 "pId": "0007",
+                 "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
+                 "pZQImg":"assets/updaa/car8.jpg",
+                 "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+                 "pPrice":1899,
+                 "pAllNum":50,  // 库存
+                 "pOutNum":0,   // 销量
+                 "pCartNum":0,  // 购物车数量
+                 "pLikeChecked":false,     // 是否收藏
+                 "checked":false       // 是否选中
+             },
+             {
+                 "pId": "0008",
+                 "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
+                 "pZQImg":"assets/updaa/car9.jpg",
+                 "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+                 "pPrice":1899,
+                 "pAllNum":50,  // 库存
+                 "pOutNum":0,   // 销量
+                 "pCartNum":0,  // 购物车数量
+                 "pLikeChecked":false,     // 是否收藏
+                 "checked":false       // 是否选中
+             },{
+                 "pId": "0009",
+                 "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
+                 "pZQImg":"assets/updaa/car10.jpg",
+                 "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+                 "pPrice":1899,
+                 "pAllNum":50,  // 库存
+                 "pOutNum":0,   // 销量
+                 "pCartNum":0,  // 购物车数量
+                 "pLikeChecked":false,     // 是否收藏
+                 "checked":false       // 是否选中
+             },{
+                 "pId": "0010",
+                 "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
+                 "pZQImg":"assets/updaa/car11.jpg",
+                 "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+                 "pPrice":1899,
+                 "pAllNum":50,  // 库存
+                 "pOutNum":0,   // 销量
+                 "pCartNum":0,  // 购物车数量
+                 "pLikeChecked":false,     // 是否收藏
+                 "checked":false       // 是否选中
+             },{
+                 "pId": "0011",
+                 "pImg":["img/imgShops/15_06150299653473793_360.jpg"],
+                 "pZQImg":"assets/updaa/car12.jpg",
+                 "pName":"Redmi Note 8 Pro 8GB+128GB 魔兽版",
+                 "pPrice":1899,
+                 "pAllNum":50,  // 库存
+                 "pOutNum":0,   // 销量
+                 "pCartNum":0,  // 购物车数量
+                 "pLikeChecked":false,     // 是否收藏
+                 "checked":false       // 是否选中
+             },
          ]
       },
       {
